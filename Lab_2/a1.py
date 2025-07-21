@@ -9,8 +9,8 @@ rows = C.shape[0]
 _, singular_vals, _ = np.linalg.svd(C)
 matrix_rank = sum(val > 1e-10 for val in singular_vals)
 
-pseudo_inv = np.linalg.pinv(products)
-costs = pseudo_inv @ payments
+pseudo_inv = np.linalg.pinv(A)
+costs = pseudo_inv @ C
 
 print("RESULTS:")
 print(f"Dimensionality of vector space : {cols}")
